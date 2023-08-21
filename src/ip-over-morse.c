@@ -14,12 +14,12 @@ void printHelp(char* prg, bool printHeader)
 {
 	   
     printf(" Options:\n"
-	   "  -s / --send       send the message\n"
-	   "  -r / --receive    receive the message\n"
-	   "  -p / --port       specify port(default:8080)\n"
-	   "  -a / --address    specify destination address(default: 127.0.0.1)\n"
-	   "  -pcl              specify protocol: UDP or TCP (default:TCP)\n"
-       "  -h / --help       print this help\n");
+	   "  -s / --send      	  send the message\n"
+	   "  -r / --receive      receive the message\n"
+	   "  -p / --port    	  specify port(default:8080)\n"
+	   "  -a / --address      specify destination address(default: 127.0.0.1)\n"
+	   "  -pcl  		  specify protocol: UDP or TCP (default:TCP)\n"
+       "  -h / --help      	  print this help\n");
 
 }
 
@@ -113,13 +113,13 @@ int main(int argc, char *argv[])
 {
 
     /****************************************************************/
-    // Take user input on whether to send/receive, 
+    // To-do: take user input on whether to send/receive, 
     // protocol, port, address
     /****************************************************************/
     parseArgs(argc, argv);
     
     /****************************************************************/
-    // Initialize server/client
+    // To-do: initialize server/client
     /****************************************************************/
     int temp;
     if(sender){
@@ -148,11 +148,19 @@ int main(int argc, char *argv[])
         }
     }
         
+
+    /****************************************************************/
+    // To-do: bind server/client
+    /****************************************************************/
+    bool keep_sending = true;
     while(1)
     {
-
         /****************************************************************/
-        // Send/receive the message
+        // To-do: encode/decode the message
+        /****************************************************************/
+         
+        /****************************************************************/
+        // To-do: send/receive the message
         /****************************************************************/
         if (temp == UDP_CLIENT)
         {
@@ -162,6 +170,7 @@ int main(int argc, char *argv[])
         else if (temp == UDP_SERVER)
         {
             udp_recv_request();
+            // Decode WAV to text
             udp_send_response();
             printf("----------WAV File info----------\n");
             printf("%s\n", decode_wav_file());
@@ -182,7 +191,7 @@ int main(int argc, char *argv[])
         }
 
         /****************************************************************/
-        // Ask the user if he wants to send/receive another message
+        // To-do: Ask the user if he wants to send/receive another message
         // if yes, continue, else break
         /****************************************************************/
         printf("Do you want to send/receive another message? (y/n): ");
