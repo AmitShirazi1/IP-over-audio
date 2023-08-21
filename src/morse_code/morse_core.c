@@ -142,6 +142,8 @@ void create_wav_file(){
 		write_morse_char(params.output_file, params.waveform, params.frequency, 
 			params.unit_duration, params.signal_code, params.output_text_file);
 	}
+	write_morse_char(params.output_file, params.waveform, params.frequency, 
+			params.unit_duration, params.signal_code, params.output_text_file);
 }
 
 void close_files(){

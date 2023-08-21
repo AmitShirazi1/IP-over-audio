@@ -1,0 +1,3 @@
+Hello, this is an example text file.
+Hopefully the code works.
+Have a nice day! :)
